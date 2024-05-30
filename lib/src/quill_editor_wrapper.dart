@@ -43,6 +43,7 @@ class QuillHtmlEditor extends StatefulWidget {
     this.loadingBuilder,
     this.inputAction = InputAction.newline,
     this.autoFocus = false,
+    this.focusNode,
     this.textStyle = const TextStyle(
       fontStyle: FontStyle.normal,
       fontSize: 20.0,
@@ -122,6 +123,7 @@ class QuillHtmlEditor extends StatefulWidget {
   ///[hintTextPadding] optional style to set padding to the editor's text,
   /// default padding will be EdgeInsets.zero
   final EdgeInsets? hintTextPadding;
+  final FocusNode? focusNode;
 
   /// [ensureVisible] by default it will be set to false, set it to true to
   /// make sure the focus area of the editor is visible.
@@ -191,6 +193,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
   @override
   void dispose() {
     _webviewController.dispose();
+
     super.dispose();
   }
 
@@ -331,7 +334,10 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
                 callBack: (map) {
                   _hasFocus = map?.toString() == 'true';
                   if (widget.onFocusChanged != null) {
+                    FocusScope.of(context).requestFocus(widget.focusNode);
                     widget.onFocusChanged!(_hasFocus);
+                  } else {
+                    widget.onFocusChanged!(!_hasFocus);
                   }
 
                   /// scrolls to the end of the text area, to keep the focus visible
