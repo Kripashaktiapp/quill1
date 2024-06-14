@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:quill_html_editor/src/widgets/webviewx/src/webviewx_plus.dart';
+import 'package:quill_html_editor_v2/src/widgets/webviewx/src/webviewx_plus.dart';
 
 ///[TablePicker] a widget to interactively selected the number of rows and columns to insert in editor
 class TablePicker extends StatefulWidget {
@@ -128,8 +128,7 @@ class _CellSelectionWidget extends SingleChildRenderObjectWidget {
   final int index;
 
   const _CellSelectionWidget(
-      {required Widget child, required this.index, Key? key})
-      : super(child: child, key: key);
+      {required Widget super.child, required this.index, super.key});
 
   @override
   _CellBox createRenderObject(BuildContext context) {

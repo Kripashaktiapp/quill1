@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quill_html_editor/src/widgets/webviewx/src/webviewx_plus.dart';
+import 'package:quill_html_editor_v2/src/widgets/webviewx/src/webviewx_plus.dart';
 
 import '../constants/image_constants.dart';
 import 'el_tooltip/el_tooltip.dart';
@@ -8,13 +8,13 @@ import 'el_tooltip/el_tooltip.dart';
 class EditTableDropDown extends StatefulWidget {
   /// [EditTableDropDown] constructor to edit the table, add remove columns rows etc.
   const EditTableDropDown({
-    Key? key,
+    super.key,
     required this.dropDownColor,
     required this.iconColor,
     required this.iconSize,
     required this.padding,
     required this.onOptionSelected,
-  }) : super(key: key);
+  });
 
   ///[dropDownColor] to define the dropdown background color
   final Color dropDownColor;
