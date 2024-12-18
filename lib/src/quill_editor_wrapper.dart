@@ -773,6 +773,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
                  catch(e) {
                     console.log('replaceSelection', e);
                  } 
+                 return '';
             }
             // Retrieve the Quill editor container element by its ID
             var quillContainer = document.getElementById('scrolling-container');
