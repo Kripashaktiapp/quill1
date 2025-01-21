@@ -867,9 +867,9 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
                     var oldSelection = editor.getSelection(true)
                     var oldPos = oldSelection.index
                     var oldSelectionLength = oldSelection.length
-                    if( ops[0]["retain"] === undefined || !ops[1] || !ops[1]["insert"] || !ops[1]["insert"] || ops[1]["list"] === "bullet" || ops[1]["list"] === "ordered" || ops[1]["insert"] != "\\n" || oldSelectionLength > 0) {
-                      return
-                    }
+                    // if( ops[0]["retain"] === undefined || !ops[1] || !ops[1]["insert"] || !ops[1]["insert"] || ops[1]["list"] === "bullet" || ops[1]["list"] === "ordered" || ops[1]["insert"] != "\\n" || oldSelectionLength > 0) {
+                    //   return
+                    // }
                     
                     setTimeout(function() {
                       var newPos = editor.getSelection(true).index
