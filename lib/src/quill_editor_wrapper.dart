@@ -857,32 +857,32 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
                   return
                 }
                 editor.applyGoogleKeyboardWorkaround = true
-                editor.on('editor-change', function(eventName, ...args) {
-                  try {
-                    // args[0] will be delta
-                    var ops = args[0]['ops']
-                    if(ops === null) {
-                      return
-                    }
-                    var oldSelection = editor.getSelection(true)
-                    var oldPos = oldSelection.index
-                    var oldSelectionLength = oldSelection.length
-                    // if( ops[0]["retain"] === undefined || !ops[1] || !ops[1]["insert"] || !ops[1]["insert"] || ops[1]["list"] === "bullet" || ops[1]["list"] === "ordered" || ops[1]["insert"] != "\\n" || oldSelectionLength > 0) {
-                    //   return
-                    // }
+                // editor.on('editor-change', function(eventName, ...args) {
+                //   try {
+                //     // args[0] will be delta
+                //     var ops = args[0]['ops']
+                //     if(ops === null) {
+                //       return
+                //     }
+                //     var oldSelection = editor.getSelection(true)
+                //     var oldPos = oldSelection.index
+                //     var oldSelectionLength = oldSelection.length
+                //     if( ops[0]["retain"] === undefined || !ops[1] || !ops[1]["insert"] || !ops[1]["insert"] || ops[1]["list"] === "bullet" || ops[1]["list"] === "ordered" || ops[1]["insert"] != "\\n" || oldSelectionLength > 0) {
+                //       return
+                //     }
                     
-                    setTimeout(function() {
-                      var newPos = editor.getSelection(true).index
-                      if(newPos === oldPos) {
-                      console.log('newPos oldPos');
-                        editor.setSelection(editor.getSelection(true).index + 1, 0)
-                      }
-                    }, 30);
-                    //onRangeChanged();
-                  } catch(e) {
-                    console.log('applyGoogleKeyboardWorkaround - editor-change', e);
-                  }
-                });
+                //     setTimeout(function() {
+                //       var newPos = editor.getSelection(true).index
+                //       if(newPos === oldPos) {
+                //       console.log('newPos oldPos');
+                //         editor.setSelection(editor.getSelection(true).index + 1, 0)
+                //       }
+                //     }, 30);
+                //     //onRangeChanged();
+                //   } catch(e) {
+                //     console.log('applyGoogleKeyboardWorkaround - editor-change', e);
+                //   }
+                // });
               } catch(e) {
                 console.log('applyGoogleKeyboardWorkaround', e);
               } 
@@ -1153,12 +1153,12 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
             
             function setHtmlText(htmlString) {
             try{
-               quilleditor.enable(false);
+               // quilleditor.enable(false);
                quilleditor.clipboard.dangerouslyPasteHTML(htmlString);   
             }catch(e){
                console.log('setHtmlText', e);
             }
-             setTimeout(() =>   quilleditor.enable($isEnabled), 10);  
+             // setTimeout(() =>   quilleditor.enable($isEnabled), 10);  
               return '';
             }
             
